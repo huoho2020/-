@@ -1,3 +1,4 @@
+
 import sys
 import time 
 import random
@@ -35,7 +36,8 @@ while True:
                 p_hp=p_hp-e_xp
                 print('你的血量:'+str(p_hp))
                 if p_hp>=1 and e_hp<1:
-                    print('你胜利了')
+                    print('你胜利了，')
+                    
                     p_hp=p_hp+e_hp
                     p_xp=p_xp+e_xp
                     p_q=p_q+10
@@ -46,6 +48,11 @@ while True:
                 elif  p_hp<1 and e_hp<1:
                     print('你们都死翘翘了')
                     break
+        else:
+            print('你减到一张彩票')
+            Jl=random.randint(0,100)
+            print('你跑去兑奖获得了'+str(Jl)+'元')
+
     elif zl=='b':
         while True:        
             if p_xp>=3:
@@ -53,7 +60,7 @@ while True:
                 zl==input('按a购买加血道具按b卖加血道具按c退出')
                 if zl=='a':
                     if p_q>=10:
-                        dj.append('jxgj')
+                        dj.append('jxdj')
                         print('购买成功')
                     else:
                         print('你的钱不够哦')
