@@ -1,5 +1,4 @@
 
-import sys
 import time 
 import random
 p_hp=20
