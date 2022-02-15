@@ -18,6 +18,9 @@ while True:
             print('你遇到了敌人')
             e_hp=random.randint(10,15)
             e_xp=random.randint(1,2)
+            bl_e_hp=e_hp
+            bl_e_xp=e_xp
+            
             while p_hp>=1 and e_hp>=1:
                 print('这是你的回合')
                 zl=input('按a攻击按c道具按d跳过')
@@ -35,10 +38,10 @@ while True:
                 p_hp=p_hp-e_xp
                 print('你的血量:'+str(p_hp))
                 if p_hp>=1 and e_hp<1:
-                    print('你胜利了，')
+                    print('你胜利了，获得了：'+str(bl_e_xp)+'xp和：'+str(bl_e_hp)+'hp')
                     
-                    p_hp=p_hp+e_hp
-                    p_xp=p_xp+e_xp
+                    p_hp+=bl_e_hp
+                    p_xp+=bl_e_xp
                     p_q=p_q+10
                     break
                 elif  p_hp<1 and e_hp>=1:
@@ -51,7 +54,7 @@ while True:
             print('你减到一张彩票')
             Jl=random.randint(0,100)
             print('你跑去兑奖获得了'+str(Jl)+'元')
-
+            p_q+=Jl
     elif zl=='b':
         while True:        
             if p_xp>=3:
